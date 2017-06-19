@@ -1,0 +1,16 @@
+foreach ($a as $id =>$n){
+    echo '<h2>', $id, '</h2>';
+    foreach ($n as $ii=>$f) {
+        if(($s = explode(" ", $f)) && count($s)==2) {
+                $q[] = $s[0];
+                $z[] = $s[1];
+            if ($ii==(count($f)-1)) {
+                shuffle($q);
+                shuffle($z);
+                if (strncmp($dd[$i], $gf, 4) == 0 )
+               $jj= implode(", ",$q);
+                echo $jj;
+            }
+        }
+    }
+}
