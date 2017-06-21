@@ -32,26 +32,26 @@ for ($i = 0; $i < count($q); $i++) {
 }
 
 foreach($a as $id=>$ss) {
-    foreach ($ss as $gty => $gf) {
-        for ($i=0;$i<count($dd);$i++) {
-            if ((strncmp($dd[$i], $gf, 4) == 0)&& ($id=='Africa') ) {
-                $tr[]=$dd[$i];
-                if ($gty==3){
-                    echo '<h2>', $id, '</h2>',implode(', ',$tr),'<br>';
+        foreach ($ss as $gty => $gf) {
+            for ($i = 0; $i < count($dd); $i++) {
+                if ((strncmp($dd[$i], $gf, 4) == 0)) {
+                    if ($id == 'Africa') {
+                        $tr[] = $dd[$i];
+                    } else if ($id == 'Australia') {
+                        $rt[] = $dd[$i];
+                    } else {
+                        $op[] = $dd[$i];
+                    }
                 }
-            }
-            else if ((strncmp($dd[$i], $gf, 4) == 0)&& ($id=='Australia')){
-                $rt[]=$dd[$i];
-                if ($gty==3){
-                    echo '<h2>', $id, '</h2>',implode(', ',$rt),'<br>';
-                }
-            }
-             else if ((strncmp($dd[$i], $gf, 4) == 0)&& ($id=='South America')){
-                $op[]=$dd[$i];
-                 if ($gty==3){
-                     echo '<h2>', $id, '</h2>', implode(', ',$op),'<br>';
-                 }
             }
         }
+    if($id=='Africa') {
+        echo '<h2>', $id, '</h2>', implode(', ', $tr), '<br>';
+    }
+    else if ($id == 'Australia') {
+        echo '<h2>', $id, '</h2>', implode(', ', $rt), '<br>';
+    }
+    else {
+        echo '<h2>', $id, '</h2>', implode(', ', $op), '<br>';
     }
 }
