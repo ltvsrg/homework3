@@ -24,27 +24,22 @@ foreach ($a as $id =>$n){
 shuffle($q);
 shuffle($z);
 
-for ($i = 0; $i < count($q); $i++) {
-    for ($i = 0; $i < count($z); $i++) {
-        $yy=$q[$i] . " " . $z[$i];
-        $dd[]= $yy;
-    }
-}
-
 foreach($a as $id=>$ss) {
-        foreach ($ss as $gty => $gf) {
-            for ($i = 0; $i < count($dd); $i++) {
-                if ((strncmp($dd[$i], $gf, 4) == 0)) {
+    foreach ($ss as $gty => $gf) {
+        for ($i = 0; $i < count($q); $i++) {
+            for ($i = 0; $i < count($z); $i++) {
+                if ((strncmp($q[$i], $gf, 4) == 0)) {
                     if ($id == 'Africa') {
-                        $tr[] = $dd[$i];
+                        $tr[] = $q[$i]." ".$z[$i];
                     } else if ($id == 'Australia') {
-                        $rt[] = $dd[$i];
+                        $rt[] = $q[$i]." ".$z[$i];
                     } else {
-                        $op[] = $dd[$i];
+                        $op[] = $q[$i]." ".$z[$i];
                     }
                 }
             }
         }
+    }
     if($id=='Africa') {
         echo '<h2>', $id, '</h2>', implode(', ', $tr), '<br>';
     }
